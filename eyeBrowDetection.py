@@ -7,13 +7,8 @@ face_mesh = mp_face_mesh.FaceMesh(static_image_mode=False, max_num_faces=1, min_
 mp_drawing = mp.solutions.drawing_utils
 
 # Open webcam
-cap = cv2.VideoCapture(1)
-
-while cap.isOpened():
+def eyeBrowDetection(cap):
     success, frame = cap.read()
-    if not success:
-        break
-
     height, width, _ = frame.shape
 
     # Convert to RGB
@@ -48,10 +43,4 @@ while cap.isOpened():
                         cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 255), 2)
 
     # Show frame
-    cv2.imshow("Eyebrow Movement Detection", frame)
-
-    if cv2.waitKey(10) & 0xFF == ord('q'):
-        break
-
-cap.release()
-cv2.destroyAllWindows()
+    return frame

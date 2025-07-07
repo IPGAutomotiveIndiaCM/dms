@@ -2,7 +2,7 @@ import cv2
 from deepface import DeepFace
 
 # Load face cascade classifier
-face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + r'D:\Office\repo\dms\trainingData\haarcascade_frontalface_default.xml')
 
 # Start capturing video
 cap = cv2.VideoCapture(1)
